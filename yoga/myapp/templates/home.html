@@ -33,7 +33,15 @@
                 <img src="{{ img_obj.image.url}}" alt="uploaded-pic">
             </div>
             <div class="pose-details">
-                <h2>This is {{pose}}</h2>
+                {% if pose == "No" %}
+                    <h1>No proper pose detected</h1>
+                {% else %}
+                    <h2>Detected Yoga Pose</h2>
+            <br/>
+                    <h1 class="pose_name"> {{pose}}</h1>
+                {% endif %}
+                
+                
             </div>
             {% endif %}
         </div>

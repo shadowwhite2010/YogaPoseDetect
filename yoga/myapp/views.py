@@ -52,7 +52,7 @@ def yoga_predict(img_name):
         res = classifier.predict([arr])
         return res[0]
     else:
-        return "no proper pose detected"
+        return "no"
 
 # Create your views here.
 def home(request):
@@ -69,7 +69,7 @@ def home(request):
             ##### write the image loading pose here
             print(type(img_obj.name), img_obj.name)
             pose = yoga_predict(img_obj.name)
-
+            pose = pose.capitalize()
             #####
             return render(request, 'home.html', {'form': form, 'img_obj': img_objj, "pose":pose})
 
