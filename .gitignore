@@ -1,3 +1,4 @@
 /env
 /.vscode
 /yoga_pose_dataset
+/__pycache__
