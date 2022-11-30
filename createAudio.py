@@ -16,7 +16,8 @@ engine.setProperty('rate', 150) # Decrease the Speed Rate x2
 
 
 audiosLoc = "audioFiles/"
-
+poseLoc = "poses/"
+secLoc = "seconds/"
 
 
 def createAudio(textList, audioPath):
@@ -35,22 +36,23 @@ basePerform = "You have performed"
 
 
 
-poseList = [("Warrior Pose 1", "warrior1"),
-            ("Warrior Pose 2", "warrior2"),
-            ("Mountain Pose", "mountain"),
-            ("Goddess Pose", "goddess"),
-            ("Downward dog Pose", "downdog"),
-
+poseList = [("pranamasan", "pranamasan"),
+            ("urdhva hastasana", "urdhva hastasana"),
+            ("uttanasana", "uttanasana"),
+            ("aswa sanchalnasan", "aswa sanchalnasan"),
+            ("adho mukha savanasana", "adho mukha savanasana"),
+            ("ashtanga namaskar", "ashtanga namaskar"),
+            ("bhujangasana", "bhujangasana"),
             ]
 
 
-# for pose,naming in poseList:
-#     createAudio([basePerform, pose], naming)
+for pose,naming in poseList:
+    createAudio([basePerform, pose], f"{audiosLoc}{poseLoc}{naming}.wav")
 
 secText = "seconds completed"
 
 for i in range(15,181,15):
-    createAudio([str(i),secText], f"{audiosLoc}{str(i)}sec.wav")
+    createAudio([str(i),secText], f"{audiosLoc}{secLoc}{str(i)}sec.wav")
 
 
 
